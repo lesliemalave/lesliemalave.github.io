@@ -10,4 +10,7 @@
 
 [Assignment 6](https://docs.google.com/presentation/d/1AuFuGwwj-u9LqiTyMUoJCXFGo2yym27j7O6Vzyv24sM/edit?usp=sharing)
 
+[Final Project](https://lesliemalave.shinyapps.io/TexasTeacherDatabase/) 
+
 ## EPPS 6356 Assignments
+
