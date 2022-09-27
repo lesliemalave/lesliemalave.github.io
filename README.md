@@ -15,3 +15,4 @@
 ## EPPS 6356 Assignments
 
 [Assignment 1](https://docs.google.com/presentation/d/1vo-7W3B4Jx28bmhytb3jVYBOjlweo70n6etJizD_fGM/edit?usp=sharing)
+[Assignment 3] (https://docs.google.com/presentation/d/1dVurw7jQvkf7iYchqLoLS80MZYPQ5GUddzKUokHW9BQ/edit?usp=sharing)
