@@ -17,3 +17,5 @@
 [Assignment 1](https://docs.google.com/presentation/d/1vo-7W3B4Jx28bmhytb3jVYBOjlweo70n6etJizD_fGM/edit?usp=sharing)
 
 [Assignment 3](https://docs.google.com/presentation/d/1dVurw7jQvkf7iYchqLoLS80MZYPQ5GUddzKUokHW9BQ/edit?usp=sharing)
+
+[Assignment 4](https://docs.google.com/document/d/1SBjoZncXLCa3pSkhSqrrqdEYxG5vNEsCnVJGIySPKp0/edit?usp=sharing)
