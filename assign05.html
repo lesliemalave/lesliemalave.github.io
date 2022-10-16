@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Leslie Malave - About</title>
+<title>Leslie Malave - Assignment 5</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./index.html">Home</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page">About</a>
+    <a class="nav-link" href="./about.html">About</a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-assignments" role="button" data-bs-toggle="dropdown" aria-expanded="false">Assignments</a>
@@ -92,11 +92,21 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./assign01.html">
  <span class="dropdown-text">Assignment 1</span></a>
   </li>  
-        <li class="dropdown-header">assign02.qmd</li>
-        <li class="dropdown-header">assign03.qmd</li>
+        <li>
+    <a class="dropdown-item" href="./assign02.html">
+ <span class="dropdown-text">Assignment 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assign03.html">
+ <span class="dropdown-text">Assignment 3</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="./assign04.html">
  <span class="dropdown-text">Assignment 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assign05.html">
+ <span class="dropdown-text">Assignment 5</span></a>
   </li>  
     </ul>
   </li>
@@ -114,14 +124,22 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#chart-3" id="toc-chart-3" class="nav-link active" data-scroll-target="#chart-3"><strong>Chart 3</strong></a></li>
+  <li><a href="#chart-4" id="toc-chart-4" class="nav-link" data-scroll-target="#chart-4"><strong>Chart 4</strong></a></li>
+  <li><a href="#chart-5" id="toc-chart-5" class="nav-link" data-scroll-target="#chart-5"><strong>Chart 5</strong></a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Assignment 5</h1>
 </div>
 
 
@@ -135,9 +153,56 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>I am graduate student.</p>
+<section id="chart-3" class="level2">
+<h2 class="anchored" data-anchor-id="chart-3"><strong>Chart 3</strong></h2>
+<p>data &lt;- starwars %&gt;%</p>
+<p>select (name, gender, mass, height, species) %&gt;%</p>
+<p>filter (species == “Human” | species == “Droid”) %&gt;%</p>
+<p>na.omit()</p>
+<p>ggplot(data, aes(x=name, y=height, fill = name)) +</p>
+<p>geom_bar(stat = “identity”) +</p>
+<p>labs(title = “Height of Star Wars Characters”)+</p>
+<p>theme(legend.position=“none”)+</p>
+<p>coord_flip()</p>
+<p><img src="Rplot02.png" class="img-fluid"></p>
+</section>
+<section id="chart-4" class="level2">
+<h2 class="anchored" data-anchor-id="chart-4"><strong>Chart 4</strong></h2>
+<p>library(ggplot2)</p>
+<p>data &lt;- data.frame(</p>
+<p>Name=c(“Lucy”,“Bill”,“Sandra”,“Doug”,“Eric”) ,</p>
+<p>Grade=c(100,12,72,35,50)</p>
+<p>)</p>
+<p>ggplot(data, aes(x=Name, y=Grade, fill = Name)) +</p>
+<p>geom_bar(stat = “identity”) +</p>
+<p>labs(title = “Grades of Calculus 2 Students”)+</p>
+<p>theme(legend.position=“none”)</p>
+<p><img src="Rplot01.png" class="img-fluid"></p>
+</section>
+<section id="chart-5" class="level2">
+<h2 class="anchored" data-anchor-id="chart-5"><strong>Chart 5</strong></h2>
+<p>library(ggplot2)</p>
+<p>library(tidyverse)</p>
+<p>data &lt;- data.frame(</p>
+<p>id=seq(1,100),</p>
+<p>individual=paste( “Mister”, seq(1,100), sep=““),</p>
+<p>value=sample( seq(10,100), 100, replace=T)</p>
+<p>)</p>
+<p>ggplot(data, aes(x=as.factor(id), y=value)) +</p>
+<p>geom_bar(stat=“identity”, fill=alpha(“red”, 0.3)) +</p>
+<p>ylim(-100,120) +</p>
+<p>theme_minimal() +</p>
+<p>theme(</p>
+<p>axis.text = element_blank(),</p>
+<p>axis.title = element_blank(),</p>
+<p>panel.grid = element_blank(),</p>
+<p>plot.margin = unit(rep(-2,4), “cm”)</p>
+<p>) +</p>
+<p>coord_polar(start = 0)</p>
+<p><img src="Rplot03.png" class="img-fluid"></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -9,9 +9,9 @@
   {
     "objectID": "assign01.html",
     "href": "assign01.html",
-    "title": "assign01",
+    "title": "Assignment 1",
     "section": "",
-    "text": "You must first create rules that provide boundaries for the creation process. \nThen a computer  follows those rules to produce new works on your behalf.  \nComputers can generate thousands of ideas in milliseconds"
+    "text": "You must first create rules that provide boundaries for the creation process. \nThen a computer follows those rules to produce new works on your behalf.  \nComputers can generate thousands of ideas in milliseconds"
   },
   {
     "objectID": "about.html",
@@ -19,5 +19,96 @@
     "title": "About",
     "section": "",
     "text": "I am graduate student."
+  },
+  {
+    "objectID": "assign04.html",
+    "href": "assign04.html",
+    "title": "Assignment 4",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(ggplot2)\nlibrary(dplyr) \ndata <- data.frame(\n  Type=c(“Honda”,“Chevy”,“Toyota”,“Hyundai”) , \n  MPG=c(20,54,73,15) ,\n  obs=c(90,500,259,642)\n)\ndata$right <- cumsum(data$obs) + 30*c(0:(nrow(data)-1))\ndata$left <- data$right - data$obs\n \nggplot(data, aes(ymin = 0)) + \n  geom_rect(aes(xmin = left, xmax = right, ymax = MPG, colour = Type, fill = Type)) +\n  xlab(“Number of Cars Sampled”) + \n  ylab(“Miles Per Gallon”) +\n  theme_ipsum()"
+  },
+  {
+    "objectID": "assign01.html#generative-art-example",
+    "href": "assign01.html#generative-art-example",
+    "title": "Assignment 1",
+    "section": "Generative Art Example:",
+    "text": "Generative Art Example:\nGeorg Nees - Schotter (Gravel), 1968\nA row of 12 squared gradually increases magnitude of randomness in location and rotation.\n\n\n\n\nCode used to generate art piece"
+  },
+  {
+    "objectID": "assign01.html#fall.r",
+    "href": "assign01.html#fall.r",
+    "title": "Assignment 1",
+    "section": "Fall.R",
+    "text": "Fall.R"
+  },
+  {
+    "objectID": "assign01.html#chart-critique",
+    "href": "assign01.html#chart-critique",
+    "title": "Assignment 1",
+    "section": "Chart Critique",
+    "text": "Chart Critique\n\n\nContrasting information in the title vs the legend. Is this info from 2017 & 2018? Or 2016 & 2017?\nThe data labels on the bars are horizontal - must rotate head to be able to read\nData labels are redundant if the Y axis has the dollar cut off information\nLastly, more contrasting colors could have been used (e.g a darker blue)."
+  },
+  {
+    "objectID": "assign03.html",
+    "href": "assign03.html",
+    "title": "Assignment 3",
+    "section": "",
+    "text": "All models have the same regression line equation \nAll models are statistically significant \nHowever:\n\nThe top left model is the only figure where the observations are distributed evenly around the regression line \nThe other models show that while the regression line is technically the best-fit, it does not accurately represent the data\n\nThis shows that regression results should always be combined with data visualization in order to get the full picture."
+  },
+  {
+    "objectID": "assign03.html#question-2-my-code-for-these-changes",
+    "href": "assign03.html#question-2-my-code-for-these-changes",
+    "title": "Assignment 3",
+    "section": "Question 2:  ",
+    "text": "Question 2:  \nI changed the type of the plot characters to diamonds (pch =23).\nAltered the colors of the plot characters to an outline of blue, filled with a purple.\nI changed the line type to a dashed line (lty =2). The width was increased (lwd =3). The color was changed to red."
+  },
+  {
+    "objectID": "assign03.html#question-3",
+    "href": "assign03.html#question-3",
+    "title": "Assignment 3",
+    "section": "Question 3:",
+    "text": "Question 3:"
+  },
+  {
+    "objectID": "assign05.html",
+    "href": "assign05.html",
+    "title": "Assignment 5",
+    "section": "",
+    "text": "data <- starwars %>%\nselect (name, gender, mass, height, species) %>%\nfilter (species == “Human” | species == “Droid”) %>%\nna.omit()\nggplot(data, aes(x=name, y=height, fill = name)) +\ngeom_bar(stat = “identity”) +\nlabs(title = “Height of Star Wars Characters”)+\ntheme(legend.position=“none”)+\ncoord_flip()"
+  },
+  {
+    "objectID": "assign05.html#chart-4",
+    "href": "assign05.html#chart-4",
+    "title": "Assignment 5",
+    "section": "Chart 4",
+    "text": "Chart 4\nlibrary(ggplot2)\ndata <- data.frame(\nName=c(“Lucy”,“Bill”,“Sandra”,“Doug”,“Eric”) ,\nGrade=c(100,12,72,35,50)\n)\nggplot(data, aes(x=Name, y=Grade, fill = Name)) +\ngeom_bar(stat = “identity”) +\nlabs(title = “Grades of Calculus 2 Students”)+\ntheme(legend.position=“none”)"
+  },
+  {
+    "objectID": "assign05.html#chart-5",
+    "href": "assign05.html#chart-5",
+    "title": "Assignment 5",
+    "section": "Chart 5",
+    "text": "Chart 5\nlibrary(ggplot2)\nlibrary(tidyverse)\ndata <- data.frame(\nid=seq(1,100),\nindividual=paste( “Mister”, seq(1,100), sep=““),\nvalue=sample( seq(10,100), 100, replace=T)\n)\nggplot(data, aes(x=as.factor(id), y=value)) +\ngeom_bar(stat=“identity”, fill=alpha(“red”, 0.3)) +\nylim(-100,120) +\ntheme_minimal() +\ntheme(\naxis.text = element_blank(),\naxis.title = element_blank(),\npanel.grid = element_blank(),\nplot.margin = unit(rep(-2,4), “cm”)\n) +\ncoord_polar(start = 0)"
+  },
+  {
+    "objectID": "assign03.html#question-2",
+    "href": "assign03.html#question-2",
+    "title": "Assignment 3",
+    "section": "Question 2:",
+    "text": "Question 2:"
+  },
+  {
+    "objectID": "assign03.html#section",
+    "href": "assign03.html#section",
+    "title": "Assignment 3",
+    "section": "",
+    "text": "My code for these changes\n\n\nI changed the type of the plot characters to diamonds (pch =23).\nAltered the colors of the plot characters to an outline of blue, filled with a purple.\nI changed the line type to a dashed line (lty =2). The width was increased (lwd =3). The color was changed to red."
+  },
+  {
+    "objectID": "assign04.html#chart-2.",
+    "href": "assign04.html#chart-2.",
+    "title": "Assignment 4",
+    "section": "Chart 2.",
+    "text": "Chart 2.\nlibrary(tidyverse)\nlibrary(ggplot2)\nlibrary(dplyr)\n \n \ngg_np <- ggplot(data = mpg, aes(x = drv, y = hwy, group = class, col=drv))\ngg_np +\n  geom_col(show.legend = FALSE) +\n  theme_gray() + \n  labs(x = “Type of Drive Train”, y = “Highway Miles per Gallon”) +\n  facet_wrap(~ class)"
   }
 ]
