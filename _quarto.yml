@@ -1,0 +1,31 @@
+project:
+  type: website
+
+website:
+  title: "Leslie Malave"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - text: EPPS 6356 Assignments
+        menu: 
+          - assign01.qmd
+          - assign02.qmd
+          - assign03.qmd
+          - assign04.qmd
+          - assign05.qmd
+          - assign06.qmd
+          - assign07.qmd
+      - href: https://lesliemalave.github.io/Quarto-Blog 
+        text: Blog 
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+
