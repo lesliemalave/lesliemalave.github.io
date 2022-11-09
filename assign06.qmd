@@ -1,0 +1,7 @@
+---
+title: "Assignment 6"
+---
+
+```{=html}
+<iframe height="700" width="100%" frameborder="no" src="https://lesliemalave.shinyapps.io/assignment6/"> </iframe>
+```
