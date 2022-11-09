@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Leslie Malave - About</title>
+<title>Leslie Malave - Assignment 7</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./index.html">Home</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page">About</a>
+    <a class="nav-link" href="./about.html">About</a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-epps-6356-assignments" role="button" data-bs-toggle="dropdown" aria-expanded="false">EPPS 6356 Assignments</a>
@@ -135,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Assignment 7</h1>
 </div>
 
 
@@ -149,11 +149,117 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>I am graduate student at The University of Texas at Dallas studying Applied Cognition and Neuroscience with a specialization in Data Analytics.</p>
+require("tidyverse")
+require("shiny")
+# Loading datasets
 
 
 
-</main> <!-- /main -->
+mpgdf &lt;- ggplot2::mpg
+diam &lt;- ggplot2::diamonds
+econ &lt;- ggplot2::economics
+
+
+
+# Define UI for dataset viewer app ----
+ui &lt;- fluidPage(
+  
+  # App title ----
+  titlePanel("Some ggplot2 Datasets"),
+  
+  # Sidebar layout with input and output definitions ----
+  sidebarLayout(
+    
+    # Sidebar panel for inputs ----
+    sidebarPanel(
+      
+      # Input: Text for providing a caption ----
+      textInput(inputId = "caption",
+                label = "Caption:",
+                value = "Datasets"),
+      
+      # Input: Selector for choosing dataset ----
+      selectInput(inputId = "dataset",
+                  label = "Select a chart:",
+                  choices = c("Vehicles", "Diamonds", "Economics"))
+    ),
+     
+    
+    # Main panel for displaying outputs ----
+    mainPanel(
+      
+      # Output: Formatted text for caption ----
+      h3(textOutput("caption", container = span)),
+      
+      # Output: Verbatim text for data summary ----
+      verbatimTextOutput("summary"),
+      
+      # Output: The graph in question ----
+      plotOutput("SelectedPlot")
+    )
+  )
+)
+
+
+
+# Define server logic to summarize and view selected dataset ----
+server &lt;- function(input, output, session) {
+  
+  datasetInput &lt;- reactive({
+    switch(input$dataset,
+           "Vehicles" =mpgdf,
+           "Diamonds"=diam,
+           "Economics"=econ)
+  })
+  PlotInput &lt;- reactive({
+    switch(input$dataset,
+           "Vehicles" = carchart(),
+           "Diamonds" = diamchart(),
+           "Economics"= econchart())
+  })
+  
+  # Create caption ----
+  output$caption &lt;- renderText({
+    input$caption
+  })
+  
+  # Create summary statistics
+  output$summary &lt;- renderPrint({
+    dataset &lt;- datasetInput()
+    summary(dataset)
+  })
+  
+  carchart &lt;- reactive ({
+    dataset &lt;- datasetInput()
+    ggplot(data = dataset, aes(y = manufacturer)) +
+      geom_bar(fill = "slategray3") +
+      facet_wrap(vars(drv),
+                 labeller = as_labeller(c("4"= "Four-Wheel Drive",
+                                          f= "Front-Wheel Drive",
+                                          r= "Rear-Wheel Drive"))) +
+      labs(x = "Count", y = "Make", title = "Vehicles by Drivetrain") +
+      theme_bw() +
+      theme(
+        strip.background = element_rect(
+          color = "midnightblue", fill = "azure", linetype="solid")
+      )
+  })
+  diamchart &lt;- reactive ({
+    dataset &lt;- datasetInput()
+      ggplot(data = dataset, aes(x = cut, y = price, fill = color,
+      )) +
+        coord_cartesian(ylim = c(15000, 19000)) +
+        geom_col(position = "dodge") +
+        labs(x = "Cut", y = "Price",
+             title = "Diamond Prices by Cut and Color", fill = "Colors") +
+        theme_bw()
+    })
+  econchart &lt;- reactive ({
+    dataset &lt;- datasetInput()
+    ss &lt;- subset(dataset, date&gt;as.Date("1967-12-30")&amp;date</main></div>
+
+
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -252,7 +358,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</div> <!-- /content -->
+ <!-- /content -->
 
 
 

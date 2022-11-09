@@ -18,7 +18,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "I am graduate student."
+    "text": "I am graduate student at The University of Texas at Dallas studying Applied Cognition and Neuroscience with a specialization in Data Analytics."
   },
   {
     "objectID": "assign04.html",
@@ -102,7 +102,7 @@
     "href": "assign03.html#section",
     "title": "Assignment 3",
     "section": "",
-    "text": "My code for these changes\n\n\nI changed the type of the plot characters to diamonds (pch =23).\nAltered the colors of the plot characters to an outline of blue, filled with a purple.\nI changed the line type to a dashed line (lty =2). The width was increased (lwd =3). The color was changed to red."
+    "text": "I changed the type of the plot characters to diamonds (pch =23).\nAltered the colors of the plot characters to an outline of blue, filled with a purple.\nI changed the line type to a dashed line (lty =2). The width was increased (lwd =3). The color was changed to red."
   },
   {
     "objectID": "assign04.html#chart-2.",
@@ -110,5 +110,12 @@
     "title": "Assignment 4",
     "section": "Chart 2.",
     "text": "Chart 2.\nlibrary(tidyverse)\nlibrary(ggplot2)\nlibrary(dplyr)\n \n \ngg_np <- ggplot(data = mpg, aes(x = drv, y = hwy, group = class, col=drv))\ngg_np +\n  geom_col(show.legend = FALSE) +\n  theme_gray() + \n  labs(x = “Type of Drive Train”, y = “Highway Miles per Gallon”) +\n  facet_wrap(~ class)"
+  },
+  {
+    "objectID": "assign07.html",
+    "href": "assign07.html",
+    "title": "Assignment 7",
+    "section": "",
+    "text": "require(\"tidyverse\")\nrequire(\"shiny\")\n# Loading datasets\n\n\n\nmpgdf <- ggplot2::mpg\ndiam <- ggplot2::diamonds\necon <- ggplot2::economics\n\n\n\n# Define UI for dataset viewer app ----\nui <- fluidPage(\n  \n  # App title ----\n  titlePanel(\"Some ggplot2 Datasets\"),\n  \n  # Sidebar layout with input and output definitions ----\n  sidebarLayout(\n    \n    # Sidebar panel for inputs ----\n    sidebarPanel(\n      \n      # Input: Text for providing a caption ----\n      textInput(inputId = \"caption\",\n                label = \"Caption:\",\n                value = \"Datasets\"),\n      \n      # Input: Selector for choosing dataset ----\n      selectInput(inputId = \"dataset\",\n                  label = \"Select a chart:\",\n                  choices = c(\"Vehicles\", \"Diamonds\", \"Economics\"))\n    ),\n     \n    \n    # Main panel for displaying outputs ----\n    mainPanel(\n      \n      # Output: Formatted text for caption ----\n      h3(textOutput(\"caption\", container = span)),\n      \n      # Output: Verbatim text for data summary ----\n      verbatimTextOutput(\"summary\"),\n      \n      # Output: The graph in question ----\n      plotOutput(\"SelectedPlot\")\n    )\n  )\n)\n\n\n\n# Define server logic to summarize and view selected dataset ----\nserver <- function(input, output, session) {\n  \n  datasetInput <- reactive({\n    switch(input$dataset,\n           \"Vehicles\" =mpgdf,\n           \"Diamonds\"=diam,\n           \"Economics\"=econ)\n  })\n  PlotInput <- reactive({\n    switch(input$dataset,\n           \"Vehicles\" = carchart(),\n           \"Diamonds\" = diamchart(),\n           \"Economics\"= econchart())\n  })\n  \n  # Create caption ----\n  output$caption <- renderText({\n    input$caption\n  })\n  \n  # Create summary statistics\n  output$summary <- renderPrint({\n    dataset <- datasetInput()\n    summary(dataset)\n  })\n  \n  carchart <- reactive ({\n    dataset <- datasetInput()\n    ggplot(data = dataset, aes(y = manufacturer)) +\n      geom_bar(fill = \"slategray3\") +\n      facet_wrap(vars(drv),\n                 labeller = as_labeller(c(\"4\"= \"Four-Wheel Drive\",\n                                          f= \"Front-Wheel Drive\",\n                                          r= \"Rear-Wheel Drive\"))) +\n      labs(x = \"Count\", y = \"Make\", title = \"Vehicles by Drivetrain\") +\n      theme_bw() +\n      theme(\n        strip.background = element_rect(\n          color = \"midnightblue\", fill = \"azure\", linetype=\"solid\")\n      )\n  })\n  diamchart <- reactive ({\n    dataset <- datasetInput()\n      ggplot(data = dataset, aes(x = cut, y = price, fill = color,\n      )) +\n        coord_cartesian(ylim = c(15000, 19000)) +\n        geom_col(position = \"dodge\") +\n        labs(x = \"Cut\", y = \"Price\",\n             title = \"Diamond Prices by Cut and Color\", fill = \"Colors\") +\n        theme_bw()\n    })\n  econchart <- reactive ({\n    dataset <- datasetInput()\n    ss <- subset(dataset, date>as.Date(\"1967-12-30\")&date"
   }
 ]
