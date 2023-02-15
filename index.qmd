@@ -1,5 +1,0 @@
----
-title: "lesliemalave.github.io"
----
-
-This is my home page.
