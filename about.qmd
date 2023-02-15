@@ -1,5 +1,0 @@
----
-title: "About"
----
-
-I am graduate student at The University of Texas at Dallas studying Applied Cognition and Neuroscience with a specialization in Data Analytics.
