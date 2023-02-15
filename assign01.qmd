@@ -1,0 +1,40 @@
+---
+title: "Assignment 1"
+editor: visual
+---
+
+## **Generative Art** is a process of algorithmically generating new ideas, forms, shapes, colors or patterns. 
+
+-   You must first create rules that provide boundaries for the creation process. 
+
+-   Then a computer follows those rules to produce new works on your behalf.  
+
+-   Computers can generate thousands of ideas in milliseconds
+
+## **Generative Art Example:**
+
+**Georg Nees - Schotter (Gravel), 1968**
+
+A row of 12 squared gradually increases magnitude of randomness in location and rotation.
+
+![](Screen%20Shot%202022-10-16%20at%2010.06.20%20AM.png){width="210"}
+
+![Code used to generate art piece](Screen%20Shot%202022-10-16%20at%2010.06.27%20AM.png){width="192"}
+
+## **Fall.R**
+
+![](images/Screen%20Shot%202022-10-16%20at%2010.09.07%20AM.png){width="453"}
+
+![](Screen%20Shot%202022-10-16%20at%2010.10.41%20AM.png){width="360"}
+
+## **Chart Critique**
+
+![](images/Screen%20Shot%202022-10-16%20at%2010.11.51%20AM.png){width="434"}
+
+-   Contrasting information in the title vs the legend. Is this info from 2017 & 2018? Or 2016 & 2017?
+
+-   The data labels on the bars are horizontal - must rotate head to be able to read
+
+-   Data labels are redundant if the Y axis has the dollar cut off information
+
+-   Lastly, more contrasting colors could have been used (e.g a darker blue).

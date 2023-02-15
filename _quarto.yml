@@ -18,6 +18,11 @@ website:
           - assign05.qmd
           - assign06.qmd
           - assign07.qmd
+      - text: EPPS 6323 Assignments 
+        menu:
+          - Lab02.qmd
+          - Lab01.qmd
+          - assign2.qmd
       - href: https://lesliemalave.github.io/Quarto-Blog 
         text: Blog 
 
