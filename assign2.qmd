@@ -1,3 +1,29 @@
 ---
 title: "Assignment 2"
 ---
+
+```{r}
+library(haven)
+TEDS_2016<-read_stata("https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true")
+head(TEDS_2016)
+
+data <- na.omit(TEDS_2016) 
+
+model1 <-  lm(Tondu ~ female + DPP + age + income + edu + Taiwanese + Econ_worse, data = data)
+summary(model1)
+
+model2 <-  lm(votetsai ~ female + DPP + age + income + edu + Taiwanese + Econ_worse, data = data)
+summary(model2)
+
+
+
+with(TEDS_2016, table(Tondu))
+prop.table(table(TEDS_2016$Tondu))
+
+TEDS_2016$Tondu<-as.numeric(TEDS_2016$Tondu,labels=c("Unificationnow”,“Statusquo,unif.infuture”,“Statusquo,decidelater","Statusquoforever","Statusquo,indep.infuture","Independencenow”,“Noresponse"))
+
+
+class(TEDS_2016$Tondu)
+barplot(table(TEDS_2016$Tondu), xlab = "Tondu Responses", ylab = "Frequency")
+
+```
