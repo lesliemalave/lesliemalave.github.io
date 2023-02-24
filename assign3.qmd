@@ -1,0 +1,37 @@
+```{r}
+library(haven)
+
+TEDS_2016<-read_stata("https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true")
+
+Tondu<-as.numeric(TEDS_2016$Tondu,labels=c("Unificationnow","Statusquo,unif.infuture","Statusquo,decidelater","Statusquoforever","Statusquo,indep.infuture","Independencenow","Noresponse"))
+
+attach(TEDS_2016)
+
+Model1 <- lm(Tondu ~ female + DPP + age + income+ edu + Taiwanese + Econ_worse)
+
+summary (Model1)
+
+subsetdata <- subset(TEDS_2016, select = c(Tondu, female, DPP, age, income, edu, Taiwanese, Econ_worse))
+
+library(ggplot2)
+
+ggplot(subsetdata, aes(x = age, y = Tondu)) +
+
+  geom_point() +
+
+  geom_smooth(method = "lm")
+
+ggplot(subsetdata, aes(x = edu, y = Tondu)) +
+
+  geom_point() +
+
+  geom_smooth(method = "lm")
+
+ggplot(subsetdata, aes(x = income, y = Tondu)) +
+
+  geom_point() +
+
+  geom_smooth(method = "lm")
+```
+
+There are 7 distinct categories in the DV which is why the data looks like that. It is not suitable to use regression analysis as linear models are used for continuous or numeric variables. Instead, a classification algorithm to predict the category of the dependent variable.
