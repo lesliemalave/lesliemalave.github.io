@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.189">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Leslie Malave – assign3</title>
+<title>Leslie Malave - Assignment 3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -143,13 +143,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">Home</a>
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">About</a>
+    <a class="nav-link" href="./about.html">
+ <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-epps-6356-assignments" role="button" data-bs-toggle="dropdown" aria-expanded="false">EPPS 6356 Assignments</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-epps-6356-assignments" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">EPPS 6356 Assignments</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-epps-6356-assignments">    
         <li>
     <a class="dropdown-item" href="./assign01.html">
@@ -182,7 +186,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-epps-6323-assignments" role="button" data-bs-toggle="dropdown" aria-expanded="false">EPPS 6323 Assignments</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-epps-6323-assignments" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">EPPS 6323 Assignments</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-epps-6323-assignments">    
         <li>
     <a class="dropdown-item" href="./Lab02.html">
@@ -198,12 +204,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
         <li>
     <a class="dropdown-item" href="./assign3.html">
- <span class="dropdown-text">assign3.html</span></a>
+ <span class="dropdown-text">Assignment 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assign4.html">
+ <span class="dropdown-text">Assignment 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assign5.html">
+ <span class="dropdown-text">Assignment 5</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="https://lesliemalave.github.io/Quarto-Blog">Blog</a>
+    <a class="nav-link" href="https://lesliemalave.github.io/Quarto-Blog">
+ <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -221,7 +236,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Assignment 3</h1>
+</div>
 
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
 
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
@@ -277,10 +307,11 @@ F-statistic: 28.73 on 7 and 1672 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Don't know how to automatically pick scale for object of type haven_labelled/vctrs_vctr/double. Defaulting to continuous.</code></pre>
+<pre><code>Don't know how to automatically pick scale for object of type
+&lt;haven_labelled/vctrs_vctr/double&gt;. Defaulting to continuous.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula 'y ~ x'</code></pre>
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="assign3_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
@@ -291,14 +322,15 @@ F-statistic: 28.73 on 7 and 1672 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Don't know how to automatically pick scale for object of type haven_labelled/vctrs_vctr/double. Defaulting to continuous.
-`geom_smooth()` using formula 'y ~ x'</code></pre>
+<pre><code>Don't know how to automatically pick scale for object of type
+&lt;haven_labelled/vctrs_vctr/double&gt;. Defaulting to continuous.
+`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 10 rows containing non-finite values (stat_smooth).</code></pre>
+<pre><code>Warning: Removed 10 rows containing non-finite values (`stat_smooth()`).</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 10 rows containing missing values (geom_point).</code></pre>
+<pre><code>Warning: Removed 10 rows containing missing values (`geom_point()`).</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="assign3_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid" width="672"></p>
@@ -309,14 +341,15 @@ F-statistic: 28.73 on 7 and 1672 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Don't know how to automatically pick scale for object of type haven_labelled/vctrs_vctr/double. Defaulting to continuous.
-`geom_smooth()` using formula 'y ~ x'</code></pre>
+<pre><code>Don't know how to automatically pick scale for object of type
+&lt;haven_labelled/vctrs_vctr/double&gt;. Defaulting to continuous.
+`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="assign3_files/figure-html/unnamed-chunk-1-3.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>There are 7 distinct categories in the DV which is why the data looks like that. It is not suitable to use regression analysis as linear models are used for continuous or numeric variables. Instead, a classification algorithm to predict the category of the dependent variable.</p>
+<p>There are 7 distinct categories in the DV which is why the data looks segregated like that. It is not suitable to use regression analysis as linear models are used for continuous or numeric variables. Instead, a classification algorithm should be used to predict the category of the dependent variable.</p>
 
 
 
@@ -362,7 +395,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -398,24 +448,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

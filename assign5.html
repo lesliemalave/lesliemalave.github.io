@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Leslie Malave - Assignment 5</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Leslie Malave</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-epps-6356-assignments" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">EPPS 6356 Assignments</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-epps-6356-assignments">    
+        <li>
+    <a class="dropdown-item" href="./assign01.html">
+ <span class="dropdown-text">Assignment 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assign02.html">
+ <span class="dropdown-text">Assignment 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assign03.html">
+ <span class="dropdown-text">Assignment 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assign04.html">
+ <span class="dropdown-text">Assignment 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assign05.html">
+ <span class="dropdown-text">Assignment 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assign06.html">
+ <span class="dropdown-text">Assignment 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assign07.html">
+ <span class="dropdown-text">Assignment 7</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-epps-6323-assignments" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">EPPS 6323 Assignments</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-epps-6323-assignments">    
+        <li>
+    <a class="dropdown-item" href="./Lab02.html">
+ <span class="dropdown-text">EPPS 6323: Lab02</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Lab01.html">
+ <span class="dropdown-text">EPPS 6302: Lab01</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assign2.html">
+ <span class="dropdown-text">Assignment 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assign3.html">
+ <span class="dropdown-text">Assignment 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assign4.html">
+ <span class="dropdown-text">Assignment 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assign5.html">
+ <span class="dropdown-text">Assignment 5</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://lesliemalave.github.io/Quarto-Blog">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Assignment 5</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the easypackages package </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(easypackages)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">libraries</span>(<span class="st">"XML"</span>,<span class="st">"wordcloud"</span>,<span class="st">"RColorBrewer"</span>,<span class="st">"NLP"</span>,<span class="st">"tm"</span>,<span class="st">"quanteda"</span>,<span class="st">"quanteda.textstats"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: XML</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: wordcloud</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: RColorBrewer</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: NLP</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: tm</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: quanteda</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Package version: 3.2.4
+Unicode version: 14.0
+ICU version: 70.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Parallel computing: 16 of 16 threads used.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>See https://quanteda.io for tutorials and examples.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'quanteda'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:tm':
+
+    stopwords</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:NLP':
+
+    meta, meta&lt;-</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: quanteda.textstats</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>All packages loaded successfully</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download text data from website</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>churchill <span class="ot">&lt;-</span><span class="fu">URLencode</span>(<span class="st">"http://www.historyplace.com/speeches/churchill-hour.htm"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># use htmlTreeParse function to read and parse paragraphs</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>doc.html<span class="ot">&lt;-</span> <span class="fu">htmlTreeParse</span>(churchill, <span class="at">useInternal=</span><span class="cn">TRUE</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>church <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">xpathApply</span>(doc.html, <span class="st">'//p'</span>, xmlValue))</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(church, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] ""                                                                                                                                                                                                                                                                                                        
+[2] ""                                                                                                                                                                                                                                                                                                        
+[3] "\n        At 5:30 a.m. on May 10, 1940, Nazi Germany began a massive attack against\n        Holland, Belgium, Luxembourg, and France. Defending those countries were\n        soldiers of the British Expeditionary Force  along with the French, Belgian,\n        and Dutch (Allied) armies. \n      "</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>words.vec <span class="ot">&lt;-</span> <span class="fu">VectorSource</span>(church)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the class of words.vec</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(words.vec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "VectorSource" "SimpleSource" "Source"      </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create Corpus object for preprocessing</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>words.corpus <span class="ot">&lt;-</span> <span class="fu">Corpus</span>(words.vec)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect</span>(words.corpus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;&lt;SimpleCorpus&gt;&gt;
+Metadata:  corpus specific: 1, document level (indexed): 0
+Content:  documents: 38
+
+ [1]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+ [2]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+ [3] \n        At 5:30 a.m. on May 10, 1940, Nazi Germany began a massive attack against\n        Holland, Belgium, Luxembourg, and France. Defending those countries were\n        soldiers of the British Expeditionary Force  along with the French, Belgian,\n        and Dutch (Allied) armies. \n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+ [4]   The Germans relied on an aggressive battle plan,\n        utilizing modern communications such as radio to direct troops in the field. The Allies, for their part, assumed a defensive posture, just as they had done at the start of World War I, and in many cases  still relied\n        on hand-delivered messages.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+ [5] As a result, the German Blitzkrieg\n        (lightning attack)  caught the Allies off-guard.  German Panzer tanks staged a surprise attack through the 'impassable' Ardennes  Forest then turned northward\n        and soon surrounded the bulk of the Allied armies in Belgium. The "Miracle at Dunkirk" occurred\n        next as 338,000 British and French soldiers were hurriedly evacuated from the coastline\n        by  Royal Navy ships and a flotilla\n        of  civilian boats of every shape and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+ [6] After just a few weeks of battle, Hitler's armies had conquered Holland, Luxembourg and Belgium. Paris fell on June 14th. Three days later, the French requested an armistice.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+ [7] The following day, June 18th, British Prime Minister Winston Churchill\n        spoke to the House of Commons about the disastrous turn of events in Europe amid the stark realization\n        that Britain now stood alone against the seemingly unstoppable might of Hitler's military machine.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+ [8]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+ [9] I spoke the other day of the colossal military disaster which occurred\nwhen the French High Command failed to withdraw the northern Armies from\nBelgium at the moment when they knew that the French front was decisively\nbroken at Sedan and on the Meuse. This delay entailed the loss of fifteen\nor sixteen French divisions and threw out of action for the critical period\nthe whole of the British Expeditionary Force. Our Army and 120,000 French\ntroops were indeed rescued by the British Navy from Dunkirk but only with\nthe loss of their cannon, vehicles and modern equipment. This loss inevitably\ntook some weeks to repair, and in the first two of those weeks the battle\nin France has been lost. When we consider the heroic resistance made by\nthe French Army against heavy odds in this battle, the enormous losses\ninflicted upon the enemy and the evident exhaustion of the enemy, it may\nwell be the thought that these 25 divisions of the best-trained and best-equipped\ntroops might have turned the scale. However, General Weygand had to fight\nwithout them. Only three British divisions or their equivalent were able\nto stand in the line with their French comrades. They have suffered severely,\nbut they have fought well. We sent every man we could to France as fast\nas we could re-equip and transport their formations.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+[10] I am not reciting these facts for the purpose of recrimination. That\nI judge to be utterly futile and even harmful. We cannot afford it. I recite\nthem in order to explain why it was we did not have, as we could have had,\nbetween twelve and fourteen British divisions fighting in the line in this\ngreat battle instead of only three. Now I put all this aside. I put it\non the shelf, from which the historians, when they have time, will select\ntheir documents to tell their stories. We have to think of the future and\nnot of the past. This also applies in a small way to our own affairs at\nhome. There are many who would hold an inquest in the House of Commons\non the conduct of the Governments--and of Parliaments, for they are in\nit, too--during the years which led up to this catastrophe. They seek to\nindict those who were responsible for the guidance of our affairs. This\nalso would be a foolish and pernicious process. There are too many in it.\nLet each man search his conscience and search his speeches. I frequently\nsearch mine.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+[11] Of this I am quite sure, that if we open a quarrel between the past\nand the present, we shall find that we have lost the future. Therefore,\nI cannot accept the drawing of any distinctions between members of the\npresent Government. It was formed at a moment of crisis in order to unite\nall the Parties and all sections of opinion. It has received the almost\nunanimous support of both Houses of Parliament. Its members are going to\nstand together, and, subject to the authority of the House of Commons,\nwe are going to govern the country and fight the war. It is absolutely\nnecessary at a time like this that every Minister who tries each day to\ndo his duty shall be respected; and their subordinates must know that their\nchiefs are not threatened men, men who are here today and gone tomorrow,\nbut that their directions must be punctually and faithfully obeyed. Without\nthis concentrated power we cannot face what lies before us. I should not\nthink it would be very advantageous for the House to prolong this debate\nthis afternoon under conditions of public stress. Many facts are not clear\nthat will be clear in a short time. We are to have a secret session on\nThursday, and I should think that would be a better opportunity for the\nmany earnest expressions of opinion which members will desire to make and\nfor the House to discuss vital matters without having everything read the\nnext morning by our dangerous foes.                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+[12] The disastrous military events which have happened during the past\nfortnight have not come to me with any sense of surprise. Indeed, I indicated\na fortnight ago as clearly as I could to the House that the worst possibilities\nwere open; and I made it perfectly clear then that whatever happened in\nFrance would make no difference to the resolve of Britain and the British\nEmpire to fight on, if necessary for years, if necessary alone.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+[13] During the last few days we have successfully brought off the great\nmajority of the troops we had on the line of communication in France; and\nseven-eighths of the troops we have sent to France since the beginning\nof the war--that is to say, about 350,000 out of 400,000 men--are safely\nback in this country. Others are still fighting with the French, and fighting\nwith considerable success in their local encounters against the enemy.\nWe have also brought back a great mass of stores, rifles and munitions\nof all kinds which had been accumulated in France during the last nine\nmonths.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+[14] We have, therefore, in this Island today a very large and powerful\nmilitary force. This force comprises all our best-trained and our finest\ntroops, including scores of thousands of those who have already measured\ntheir quality against the Germans and found themselves at no disadvantage.\nWe have under arms at the present time in this Island over a million and\na quarter men. Behind these we have the Local Defense Volunteers, numbering\nhalf a million, only a portion of whom, however, are yet armed with rifles\nor other firearms. We have incorporated into our Defense Forces every man\nfor whom we have a weapon. We expect very large additions to our weapons\nin the near future, and in preparation for this we intend forthwith to\ncall up, drill and train further large numbers. Those who are not called\nup, or else are employed during the vast business of munitions production\nin all its branches--and their ramifications are innumerable--will serve\ntheir country best by remaining at their ordinary work until they receive\ntheir summons. We have also over here Dominions armies. The Canadians had\nactually landed in France, but have now been safely withdrawn, much disappointed,\nbut in perfect order, with all their artillery and equipment. And these\nvery high-class forces from the Dominions will now take part in the defense\nof the Mother Country.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+[15] Lest the account which I have given of these large forces should\nraise the question: Why did they not take part in the great battle in France?\nI must make it clear that, apart from the divisions training and organizing\nat home, only twelve divisions were equipped to fight upon a scale which\njustified their being sent abroad. And this was fully up to the number\nwhich the French had been led to expect would be available in France at\nthe ninth month of the war. The rest of our forces at home have a fighting\nvalue for home defense which will, of course, steadily increase every week\nthat passes. Thus, the invasion of Great Britain would at this time require\nthe transportation across the sea of hostile armies on a very large scale,\nand after they had been so transported they would have to be continually\nmaintained with all the masses of munitions and supplies which are required\nfor continuous battle--as continuous battle it will surely be.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+[16] Here is where we come to the Navy--and after all, we have a Navy.\nSome people seem to forget that we have a Navy. We must remind them. For\nthe last thirty years I have been concerned in discussions about the possibilities\nof oversea invasion, and I took the responsibility on behalf of the Admiralty,\nat the beginning of the last war, of allowing all regular troops to be\nsent out of the country. That was a very serious step to take, because\nour Territorials had only just been called up and were quite untrained.\nTherefore, this Island was for several months particularly denuded of fighting\ntroops. The Admiralty had confidence at that time in their ability to prevent\na mass invasion even though at that time the Germans had a magnificent\nbattle fleet in the proportion of 10 to 16, even though they were capable\nof fighting a general engagement every day and any day, whereas now they\nhave only a couple of heavy ships worth speaking of--the Scharnhorst and\nthe Gneisenau. We are also told that the Italian Navy is to come out and\ngain sea superiority in these waters. If they seriously intend it, I shall\nonly say that we shall be delighted to offer Signor Mussolini a free and\nsafeguarded passage through the Strait of Gibraltar in order that he may\nplay the part to which he aspires. There is a general curiosity in the\nBritish Fleet to find out whether the Italians are up to the level they\nwere at in the last war or whether they have fallen off at all.                                                                                                                                                                                                                                                                                                                                                                                                                         
+[17] Therefore, it seems to me that as far as sea-borne invasion on a\ngreat scale is concerned, we are far more capable of meeting it today than\nwe were at many periods in the last war and during the early months of\nthis war, before our other troops were trained, and while the B.E.F. had\nproceeded abroad. Now, the Navy have never pretended to be able to prevent\nraids by bodies of 5,000 or 10,000 men flung suddenly across and thrown\nashore at several points on the coast some dark night or foggy morning.\nThe efficacy of sea power, especially under modern conditions, depends\nupon the invading force being of large size; It has to be of large size,\nin view of our military strength, to be of any use. If it is of large size,\nthen the Navy have something they can find and meet and, as it were, bite\non. Now, we must remember that even five divisions, however lightly equipped,\nwould require 200 to 250 ships, and with modern air reconnaissance and\nphotography it would not be easy to collect such an armada, marshal it,\nand conduct it across the sea without any powerful naval forces to escort\nit; and there would be very great possibilities, to put it mildly, that\nthis armada would be intercepted long before it reached the coast, and\nall the men drowned in the sea or, at the worst blown to pieces with their\nequipment while they were trying to land. We also have a great system of\nminefields, recently strongly reinforced, through which we alone know the\nchannels. If the enemy tries to sweep passages through these minefields,\nit will be the task of the Navy to destroy the mine-sweepers and any other\nforces employed to protect them. There should be no difficulty in this,\nowing to our great superiority at sea.                                                                                                                                                         
+[18] Those are the regular, well-tested, well-proved arguments on which\nwe have relied during many years in peace and war. But the question is\nwhether there are any new methods by which those solid assurances can be\ncircumvented. Odd as it may seem, some attention has been given to this\nby the Admiralty, whose prime duty and responsibility is to destroy any\nlarge sea-borne expedition before it reaches, or at the moment when it\nreaches, these shores. It would not be a good thing for me to go into details\nof this. It might suggest ideas to other people which they have not thought\nof, and they would not be likely to give us any of their ideas in exchange.\nAll I will say is that untiring vigilance and mind-searching must be devoted\nto the subject, because the enemy is crafty and cunning and full of novel\ntreacheries and stratagems. The House may be assured that the utmost ingenuity\nis being displayed and imagination is being evoked from large numbers of\ncompetent officers, well-trained in tactics and thoroughly up to date,\nto measure and counterwork novel possibilities. Untiring vigilance and\nuntiring searching of the mind is being, and must be, devoted to the subject,\nbecause, remember, the enemy is crafty and there is no dirty trick he will\nnot do.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+[19] Some people will ask why, then, was it that the British Navy was\nnot able to prevent the movement of a large army from Germany into Norway\nacross the Skagerrak? But the conditions in the Channel and in the North\nSea are in no way like those which prevail in the Skagerrak. In the Skagerrak,\nbecause of the distance, we could give no air support to our surface ships,\nand consequently, lying as we did close to the enemy's main air power,\nwe were compelled to use only our submarines. We could not enforce the\ndecisive blockade or interruption which is possible from surface vessels.\nOur submarines took a heavy toll but could not, by themselves, prevent\nthe invasion of Norway. In the Channel and in the North Sea, on the other\nhand, our superior naval surface forces, aided by our submarines, will\noperate with close and effective air assistance.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+[20] This brings me, naturally, to the great question of invasion from\nthe air, and of the impending struggle between the British and German Air\nForces. It seems quite clear that no invasion on a scale beyond the capacity\nof our land forces to crush speedily is likely to take place from the air\nuntil our Air Force has been definitely overpowered. In the meantime, there\nmay be raids by parachute troops and attempted descents of airborne soldiers.\nWe should be able to give those gentry a warm reception both in the air\nand on the ground, if they reach it in any condition to continue the dispute.\nBut the great question is: Can we break Hitler's air weapon? Now, of course,\nit is a very great pity that we have not got an Air Force at least equal\nto that of the most powerful enemy within striking distance of these shores.\nBut we have a very powerful Air Force which has proved itself far superior\nin quality, both in men and in many types of machine, to what we have met\nso far in the numerous and fierce air battles which have been fought with\nthe Germans. In France, where we were at a considerable disadvantage and\nlost many machines on the ground when they were standing round the aerodromes,\nwe were accustomed to inflict in the air losses of as much as two and two-and-a-half\nto one. In the fighting over Dunkirk, which was a sort of no-man's-land,\nwe undoubtedly beat the German Air Force, and gained the mastery of the\nlocal air, inflicting here a loss of three or four to one day after day.\nAnyone who looks at the photographs which were published a week or so ago\nof the re-embarkation, showing the masses of troops assembled on the beach\nand forming an ideal target for hours at a time, must realize that this\nre-embarkation would not have been possible unless the enemy had resigned\nall hope of recovering air superiority at that time and at that place.\n
+[21] In the defense of this Island the advantages to the defenders will\nbe much greater than they were in the fighting around Dunkirk. We hope\nto improve on the rate of three or four to one which was realized at Dunkirk;\nand in addition all our injured machines and their crews which get down\nsafely--and, surprisingly, a very great many injured machines and men do\nget down safely in modern air fighting--all of these will fall, in an attack\nupon these Islands, on friendly soil and live to fight another day; whereas\nall the injured enemy machines and their complements will be total losses\nas far as the war is concerned.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+[22] During the great battle in France, we gave very powerful and continuous\naid to the French Army, both by fighters and bombers; but in spite of every\nkind of pressure we never would allow the entire metropolitan fighter strength\nof the Air Force to be consumed. This decision was painful, but it was\nalso right, because the fortunes of the battle in France could not have\nbeen decisively affected even if we had thrown in our entire fighter force.\nThat battle was lost by the unfortunate strategical opening, by the extraordinary\nand unforseen power of the armored columns, and by the great preponderance\nof the German Army in numbers. Our fighter Air Force might easily have\nbeen exhausted as a mere accident in that great struggle, and then we should\nhave found ourselves at the present time in a very serious plight. But\nas it is, I am happy to inform the House that our fighter strength is stronger\nat the present time relatively to the Germans, who have suffered terrible\nlosses, than it has ever been; and consequently we believe ourselves possessed\nof the capacity to continue the war in the air under better conditions\nthan we have ever experienced before. I look forward confidently to the\nexploits of our fighter pilots--these splendid men, this brilliant youth--who\nwill have the glory of saving their native land, their island home, and\nall they love, from the most deadly of all attacks.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+[23] There remains, of course, the danger of bombing attacks, which will\ncertainly be made very soon upon us by the bomber forces of the enemy.\nIt is true that the German bomber force is superior in numbers to ours;\nbut we have a very large bomber force also, which we shall use to strike\nat military targets in Germany without intermission. I do not at all underrate\nthe severity of the ordeal which lies before us; but I believe our countrymen\nwill show themselves capable of standing up to it, like the brave men of\nBarcelona, and will be able to stand up to it, and carry on in spite of\nit, at least as well as any other people in the world. Much will depend\nupon this; every man and every woman will have the chance to show the finest\nqualities of their race, and render the highest service to their cause.\nFor all of us, at this time, whatever our sphere, our station, our occupation\nor our duties, it will be a help to remember the famous lines:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+[24] He nothing common did or mean, Upon that memorable scene.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+[25] I have thought it right upon this occasion to give the House and\nthe country some indication of the solid, practical grounds upon which\nwe base our inflexible resolve to continue the war. There are a good many\npeople who say, 'Never mind. Win or lose, sink or swim, better die than\nsubmit to tyranny--and such a tyranny.' And I do not dissociate myself\nfrom them. But I can assure them that our professional advisers of the\nthree Services unitedly advise that we should carry on the war, and that\nthere are good and reasonable hopes of final victory. We have fully informed\nand consulted all the self-governing Dominions, these great communities\nfar beyond the oceans who have been built up on our laws and on our civilization,\nand who are absolutely free to choose their course, but are absolutely\ndevoted to the ancient Motherland, and who feel themselves inspired by\nthe same emotions which lead me to stake our all upon duty and honor. We\nhave fully consulted them, and I have received from their Prime Ministers,\nMr. Mackenzie King of Canada, Mr. Menzies of Australia, Mr. Fraser of New\nZealand, and General Smuts of South Africa--that wonderful man, with his\nimmense profound mind, and his eye watching from a distance the whole panorama\nof European affairs--I have received from all these eminent men, who all\nhave Governments behind them elected on wide franchises, who are all there\nbecause they represent the will of their people, messages couched in the\nmost moving terms in which they endorse our decision to fight on, and declare\nthemselves ready to share our fortunes and to persevere to the end. That\nis what we are going to do.                                                                                                                                                                                                                                  
+[26] We may now ask ourselves: In what way has our position worsened since\nthe beginning of the war? It has worsened by the fact that the Germans\nhave conquered a large part of the coast line of Western Europe, and many\nsmall countries have been overrun by them. This aggravates the possibilities\nof air attack and adds to our naval preoccupations. It in no way diminishes,\nbut on the contrary definitely increases, the power of our long-distance\nblockade. Similarly, the entrance of Italy into the war increases the power\nof our long-distance blockade. We have stopped the worst leak by that.\nWe do not know whether military resistance will come to an end in France\nor not, but should it do so, then of course the Germans will be able to\nconcentrate their forces, both military and industrial, upon us. But for\nthe reasons I have given to the House these will not be found so easy to\napply. If invasion has become more imminent, as no doubt it has, we, being\nrelieved from the task of maintaining a large army in France, have far\nlarger and more efficient forces to meet it.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+[27] If Hitler can bring under his despotic control the industries of\nthe countries he has conquered, this will add greatly to his already vast\narmament output. On the other hand, this will not happen immediately, and\nwe are now assured of immense, continuous and increasing support in supplies\nand munitions of all kinds from the United States; and especially of aeroplanes\nand pilots from the Dominions and across the oceans coming from regions\nwhich are beyond the reach of enemy bombers.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+[28] I do not see how any of these factors can operate to our detriment\non balance before the winter comes; and the winter will impose a strain\nupon the Nazi regime, with almost all Europe writhing and starving under\nits cruel heel, which, for all their ruthlessness, will run them very hard.\nWe must not forget that from the moment when we declared war on the 3rd\nSeptember it was always possible for Germany to turn all her Air Force\nupon this country, together with any other devices of invasion she might\nconceive, and that France could have done little or nothing to prevent\nher doing so. We have, therefore, lived under this danger, in principle\nand in a slightly modified form, during all these months. In the meanwhile,\nhowever, we have enormously improved our methods of defense, and we have\nlearned what we had no right to assume at the beginning, namely, that the\nindividual aircraft and the individual British pilot have a sure and definite\nsuperiority. Therefore, in casting up this dread balance sheet and contemplating\nour dangers with a disillusioned eye, I see great reason for intense vigilance\nand exertion, but none whatever for panic or despair.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+[29] During the first four years of the last war the Allies experienced\nnothing but disaster and disappointment. That was our constant fear: one\nblow after another, terrible losses, frightful dangers. Everything miscarried.\nAnd yet at the end of those four years the morale of the Allies was higher\nthan that of the Germans, who had moved from one aggressive triumph to\nanother, and who stood everywhere triumphant invaders of the lands into\nwhich they had broken. During that war we repeatedly asked ourselves the\nquestion: 'How are we going to win?' And no one was able ever to answer\nit with much precision, until at the end, quite suddenly, quite unexpectedly,\nour terrible foe collapsed before us, and we were so glutted with victory\nthat in our folly we threw it away.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+[30] We do not yet know what will happen in France or whether the French\nresistance will be prolonged, both in France and in the French Empire overseas.\nThe French Government will be throwing away great opportunities and casting\nadrift their future if they do not continue the war in accordance with\ntheir treaty obligations, from which we have not felt able to release them.\nThe House will have read the historic declaration in which, at the desire\nof many Frenchmen--and of our own hearts--we have proclaimed our willingness\nat the darkest hour in French history to conclude a union of common citizenship\nin this struggle. However matters may go in France or with the French Government,\nor other French Governments, we in this Island and in the British Empire\nwill never lose our sense of comradeship with the French people. If we\nare now called upon to endure what they have been suffering, we shall emulate\ntheir courage, and if final victory rewards our toils they shall share\nthe gains, aye, and freedom shall be restored to all. We abate nothing\nof our just demands; not one jot or tittle do we recede. Czechs, Poles,\nNorwegians, Dutch, Belgians have joined their causes to our own. All these\nshall be restored.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+[31] What General Weygand called the Battle of France is over. I expect\nthat the Battle of Britain is about to begin. Upon this battle depends\nthe survival of Christian civilization. Upon it depends our own British\nlife, and the long continuity of our institutions and our Empire. The whole\nfury and might of the enemy must very soon be turned on us.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+[32] Hitler knows that he will have to break us in this Island or lose\nthe war. If we can stand up to him, all Europe may be free and the life\nof the world may move forward into broad, sunlit uplands. But if we fail,\nthen the whole world, including the United States, including all that we\nhave known and cared for, will sink into the abyss of a new Dark Age made\nmore sinister, and perhaps more protracted, by the lights of perverted\nscience.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+[33] Let us therefore brace ourselves to our duties, and so bear ourselves\nthat if the British Empire and its Commonwealth last for a thousand years,\nmen will still say, 'This was their finest hour.'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+[34] Winston Churchill - June 18, 1940                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+[35]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+[36] The History Place - Great Speeches Collection\n  See also: The History Place - Defeat of Hitler - Britain Stands Alone                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+[37] [&nbsp;The History Place \n        Main Page | American \n        Revolution | Abraham Lincoln | \n        American Civil War | Child \n        Labor in America 1908-1912 | U.S. \n        in World War II in the Pacific | John \n        F. Kennedy Photo History | Vietnam \n        War | First World War | The Rise of Adolf \n        Hitler | Triumph of \n        Hitler | Defeat of Hitler | Hitler Youth \n        | World War II in Europe \n        | Holocaust Timeline \n        | 20th Century Genocide \n        | Irish Potato Famine \n        | This Month in History \n        | Books on Hitler's Germany | History \n      Videos | Hollywood's Best History Movies ]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+[38] Terms of use: Private home/school\nnon-commercial, non-Internet re-usage only is allowed of any text, graphics,\nphotos, audio clips, other electronic files or materials from The History\nPlace.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Turn all words to lower case</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>words.corpus <span class="ot">&lt;-</span> <span class="fu">tm_map</span>(words.corpus, <span class="fu">content_transformer</span>(tolower))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in tm_map.SimpleCorpus(words.corpus, content_transformer(tolower)):
+transformation drops documents</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove punctuations, numbers</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>words.corpus <span class="ot">&lt;-</span> <span class="fu">tm_map</span>(words.corpus, removePunctuation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in tm_map.SimpleCorpus(words.corpus, removePunctuation): transformation
+drops documents</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>words.corpus <span class="ot">&lt;-</span> <span class="fu">tm_map</span>(words.corpus, removeNumbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in tm_map.SimpleCorpus(words.corpus, removeNumbers): transformation
+drops documents</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How about stopwords, then uniform bag of words created</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>words.corpus <span class="ot">&lt;-</span> <span class="fu">tm_map</span>(words.corpus, removeWords, <span class="fu">stopwords</span>(<span class="st">"english"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in tm_map.SimpleCorpus(words.corpus, removeWords, stopwords("english")):
+transformation drops documents</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create Term Document Matric</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>tdm <span class="ot">&lt;-</span> <span class="fu">TermDocumentMatrix</span>(words.corpus)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect</span>(tdm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;&lt;TermDocumentMatrix (terms: 1178, documents: 38)&gt;&gt;
+Non-/sparse entries: 1948/42816
+Sparsity           : 96%
+Maximal term length: 15
+Weighting          : term frequency (tf)
+Sample             :
+         Docs
+Terms     11 14 16 17 18 20 22 25 30 9
+  air      0  0  0  1  0 13  3  0  0 0
+  battle   0  0  1  0  0  0  3  0  0 2
+  british  0  0  1  0  0  1  0  0  1 3
+  force    0  2  0  1  0  4  3  0  0 1
+  france   0  1  0  0  0  1  2  0  3 2
+  french   0  0  0  0  0  0  1  0  7 6
+  great    0  0  0  4  0  3  3  1  1 0
+  large    0  3  0  3  2  0  0  0  0 0
+  upon     0  0  0  1  0  0  0  3  1 1
+  war      1  0  2  2  1  0  1  2  1 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(tdm)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>wordCounts <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(m)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>wordCounts <span class="ot">&lt;-</span> <span class="fu">sort</span>(wordCounts, <span class="at">decreasing=</span><span class="cn">TRUE</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(wordCounts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   war    air france  great french   upon 
+    24     23     20     20     19     16 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create Wordcloud</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>cloudFrame<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">word=</span><span class="fu">names</span>(wordCounts),<span class="at">freq=</span>wordCounts)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="fu">wordcloud</span>(cloudFrame<span class="sc">$</span>word,cloudFrame<span class="sc">$</span>freq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): french could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): british could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): large could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): country could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): also could not be fit on
+page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): worst could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): make could not be fit on
+page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): army could not be fit on
+page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): weeks could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): going could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): support could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): whole could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): injured could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): three could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): divisions could not be
+fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): present could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): beginning could not be
+fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): time could not be fit on
+page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): called could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): possibilities could not
+be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): france could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): without could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): come could not be fit on
+page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): quite could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): war could not be fit on
+page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): duty could not be fit on
+page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): enemy could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): battle could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): fighting could not be
+fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): hitler could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): may could not be fit on
+page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): men could not be fit on
+page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): absolutely could not be
+fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): munitions could not be
+fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): made could not be fit on
+page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): conditions could not be
+fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): whether could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): just could not be fit on
+page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): future could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): place could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): even could not be fit on
+page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): many could not be fit on
+page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): alone could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): modern could not be fit
+on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(cloudFrame$word, cloudFrame$freq): question could not be
+fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="assign5_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wordcloud</span>(<span class="fu">names</span>(wordCounts),wordCounts, <span class="at">min.freq=</span><span class="dv">1</span>,<span class="at">random.order=</span><span class="cn">FALSE</span>, <span class="at">max.words=</span><span class="dv">200</span>,<span class="at">scale=</span><span class="fu">c</span>(<span class="dv">4</span>,.<span class="dv">5</span>), <span class="at">rot.per=</span><span class="fl">0.35</span>,<span class="at">colors=</span><span class="fu">brewer.pal</span>(<span class="dv">8</span>,<span class="st">"Dark2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : question could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : whether could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : belgium could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : conditions could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : going could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : come could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : beginning could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : munitions could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : called could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : dominions could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : numbers could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : continuous could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : superiority could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : never could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : use could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : continue could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : nothing could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : countries could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : soldiers could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : relied could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : conquered could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : weeks could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : equipment could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : resistance could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : thought could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : took could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : past could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : think could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : absolutely could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : better could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : duty could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : government could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : make could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : members could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : necessary could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : received could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : subject could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : support could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : today could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : whatever could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : worst could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : safely could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : expect could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : finest could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : found could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : including could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : fully could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : given could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : admiralty could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : capable could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : concerned could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : free could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : depends could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : naval could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : remember could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : strength could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : devoted could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : good could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : untiring could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : vigilance could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : blockade could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : distance could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : possible could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : skagerrak could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : submarines could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : superior could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : surface could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : beyond could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : struggle could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : another could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : injured could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : ever could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : right could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : terrible could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : bomber could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : victory could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud(names(wordCounts), wordCounts, min.freq = 1, random.order =
+FALSE, : see could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="assign5_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb158"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">textstat_collocations</span>(church, <span class="at">size =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            collocation count count_nested length      lambda
+1                         will have the     2            2      3  4.21043524
+2                              to be of     2            2      3  4.12513311
+3                         the troops we     2            2      3  6.04501317
+4                            the war in     2            2      3  3.42223897
+5                         the navy have     2            2      3  3.63700424
+6                           that of the     2            2      3  2.59536950
+7                  the house of commons     3            3      4  7.02354884
+8                      and munitions of     2            2      3  3.35281385
+9                     the history place     4            2      3  3.62379894
+10                          and in many     2            2      3  2.41133627
+11                        invasion on a     2            2      3  2.86311014
+12                           we were at     2            2      3  2.26070989
+13                         would not be     3            3      3  2.29300634
+14                     munitions of all     2            2      3  2.70591444
+15                     the great battle     2            2      3  2.08451072
+16                        of large size     3            3      3  2.95810047
+17                         the last war     4            4      3  2.52329119
+18                      in the fighting     2            2      3  2.30886135
+19                          of hitler |     2            2      3  2.46280225
+20                     take part in the     2            2      4  4.49441258
+21                          have a navy     2            2      3  2.18455398
+22                         that we have     4            4      3  1.65423970
+23                          in spite of     2            2      3  2.62141212
+24                           or four to     2            2      3  2.30941542
+25                        the battle in     2            2      3  1.21498932
+26                      the invasion of     2            2      3  1.99108738
+27                   at the moment when     2            2      4  3.84555533
+28                   the great question     2            2      3  2.06821001
+29                           and in the     5            5      3  0.66471346
+30                        of the troops     2            2      3  1.64421051
+31                       in the defense     2            2      3  1.94055118
+32                   machines and their     2            2      3  2.15065888
+33                   have received from     2            2      3  2.28587655
+34                        not have been     2            2      3  1.85133066
+35         of the british expeditionary     2            2      4  3.68936830
+36                          of three or     2            2      3  1.93785902
+37                             up to it     2            2      3  1.86520477
+38                     for the house to     2            2      4  3.13397623
+39                      will be able to     2            2      4  2.72082042
+40                  the enemy is crafty     2            2      4  3.29463885
+41      the british expeditionary force     2            2      4  3.28024028
+42           power of our long-distance     2            2      4  3.28650436
+43                  of three or four to     2            0      5  4.95724693
+44                in the channel and in     2            0      5  4.50201808
+45                   the channel and in     2            2      4  2.93319941
+46                 beginning of the war     2            2      4  2.56318834
+47                         in france or     3            3      3  1.44252766
+48                         it would not     2            2      3  1.24667570
+49                 the beginning of the     3            3      4  2.46468045
+50                      great battle in     2            2      3  1.22223784
+51                       the defense of     2            2      3  1.37116763
+52                 and in the north sea     2            0      5  4.15730198
+53                      we are going to     2            2      4  2.32739233
+54           and munitions of all kinds     2            0      5  4.17951925
+55                        is crafty and     2            2      3  1.73400678
+56                         a large army     2            2      3  1.38969109
+57                     house of commons     3            3      3  1.69760164
+58               since the beginning of     2            2      4  2.60057849
+59        of our long-distance blockade     2            2      4  2.56265421
+60                       devoted to the     3            3      3  1.38655127
+61                    on the other hand     2            0      4  2.42106911
+62                        the north sea     2            2      3  1.60084802
+63              the enemy is crafty and     2            0      5  3.79031814
+64                       we have a very     2            2      4  1.89201430
+65                          in order to     2            2      3  1.27578742
+66                 three or four to one     2            0      5  3.68377870
+67                  at the present time     3            3      4  2.29102058
+68                   but we have a very     2            0      5  3.33073041
+69                           would be a     2            2      3  0.89460308
+70                        would be very     2            2      3  1.10102970
+71                         on the other     2            2      3  0.85468267
+72                           in the air     3            3      3  0.54011208
+73                      world war II in     2            2      4  2.16328317
+74                         of all kinds     2            2      3  1.22432922
+75                     the present time     3            3      3  1.21154854
+76                   from the dominions     2            2      3  1.00624199
+77                         from the air     2            2      3  0.74529849
+78                     and in the north     2            2      4  1.62857464
+79               at the present time in     2            0      5  2.76583039
+80               the channel and in the     2            0      5  2.50180197
+81               great battle in france     2            2      4  1.58390120
+82                  the great battle in     2            2      4  1.48893186
+83                        the battle of     2            2      3  0.64099965
+84                         at this time     2            1      3  0.81714934
+85                       to the subject     2            2      3  0.92970175
+86           the great battle in france     2            0      5  2.33174303
+87                            in no way     2            2      3  0.87109708
+88                            war II in     2            2      3  1.02867925
+89                      to continue the     3            3      3  0.77696509
+90                         at that time     3            3      3  0.62457095
+91                           and on the     2            2      3  0.38099584
+92                       channel and in     2            2      3  0.84861882
+93       the power of our long-distance     2            0      5  2.17883817
+94                          but we have     2            2      3  0.57910851
+95                   in the channel and     2            2      4  1.21588155
+96             channel and in the north     2            0      5  2.10037595
+97                            up to the     2            2      3  0.48763357
+98                     the power of our     2            2      4  0.97821127
+99               devoted to the subject     2            1      4  1.11833520
+100                      the other hand     2            2      3  0.64187640
+101                the possibilities of     2            2      3  0.52328317
+102                     the channel and     2            2      3  0.58044228
+103                      or four to one     2            2      4  0.98181547
+104                  channel and in the     2            2      4  0.82161122
+105                        the enemy is     2            2      3  0.37150488
+106            the beginning of the war     2            0      5  1.18972758
+107                    in the north sea     2            2      4  0.86732897
+108                        i have given     2            2      3  0.44089259
+109                     i have received     2            2      3  0.44089259
+110                        take part in     2            2      3  0.51541526
+111                     the moment when     3            3      3  0.46233870
+112                           we have a     5            5      3  0.19848111
+113                         four to one     2            2      3  0.38383307
+114                        are going to     3            3      3  0.37596093
+115              munitions of all kinds     2            2      4  0.71194859
+116                   in the defense of     2            2      4  0.46212825
+117                    beginning of the     3            3      3  0.30566837
+118  of the british expeditionary force     2            0      5  0.69773526
+119 power of our long-distance blockade     2            0      5  0.68916752
+120                     with the french     4            4      3  0.12099904
+121                    the british navy     2            2      3  0.16314448
+122                         to fight on     2            2      3  0.15772099
+123                     in the last war     2            2      4  0.19425403
+124                          we are now     2            2      3  0.05091046
+125          since the beginning of the     2            0      5  0.12604877
+126                    of three or four     2            2      4 -0.02534487
+127                 the present time in     2            2      4 -0.02699487
+128                        power of our     2            2      3 -0.02900181
+129                       three or four     2            2      3 -0.04576585
+130                       but we have a     2            2      4 -0.10171773
+131                          it will be     2            2      3 -0.04570850
+132                      across the sea     2            2      3 -0.07089465
+133                of our long-distance     2            2      3 -0.09314070
+134                         part in the     2            2      3 -0.08697031
+135                 continue the war in     2            2      4 -0.21848549
+136                        a very large     3            3      3 -0.09389475
+137                           at a time     2            2      3 -0.10109901
+138                    the beginning of     3            3      3 -0.22129243
+139                      in the channel     2            2      3 -0.25784316
+140                        in the north     2            2      3 -0.25784316
+141                         have a very     2            2      3 -0.18231409
+142                        a very great     2            2      3 -0.20660641
+143                        of the enemy     3            3      3 -0.19362894
+144                     it would not be     2            2      4 -0.45167828
+145                    three or four to     2            2      4 -0.57636372
+146                         in the line     2            2      3 -0.26131025
+147                i have received from     2            2      4 -0.87194164
+148                 to continue the war     2            2      4 -0.80252080
+149                      we have a navy     2            1      4 -0.77537942
+150                          at the end     2            2      3 -0.42744401
+151                       the masses of     2            2      3 -0.57562228
+152                         the task of     2            2      3 -0.57562228
+153                 enemy is crafty and     2            2      4 -1.11623119
+154                       on the ground     2            2      3 -0.60987747
+155                            i do not     3            3      3 -0.43350618
+156                         as we could     2            2      3 -0.40584719
+157                           as far as     2            2      3 -0.55572506
+158                      of the british     2            2      3 -0.41950537
+159                          be able to     4            4      3 -0.47876737
+160                     of the last war     2            2      4 -1.06103613
+161                     enemy is crafty     2            2      3 -0.81631205
+162                   the united states     2            2      3 -0.96581049
+163         british expeditionary force     2            2      3 -0.87720057
+164                         the loss of     2            2      3 -0.58513312
+165                        the power of     2            2      3 -0.58513312
+166                and munitions of all     2            2      4 -1.29450280
+167                the battle in france     2            2      4 -1.21191709
+168                    defeat of hitler     2            1      3 -0.96292060
+169                      in the british     2            2      3 -0.59315322
+170                injured machines and     2            2      3 -0.94417070
+171                       we have fully     2            2      3 -0.85885709
+172                        the house to     2            2      3 -0.83379346
+173                  the british empire     3            3      3 -0.82504604
+174                        we are going     2            2      3 -0.82759641
+175                     the french army     2            2      3 -0.87029481
+176                      in this island     4            4      3 -1.07249341
+177                         stand up to     2            2      3 -1.14664008
+178                    continue the war     3            3      3 -1.10916256
+179           the british expeditionary     2            2      3 -1.30105803
+180                           we do not     2            2      3 -0.91959736
+181                      the house that     2            2      3 -1.18106832
+182          our long-distance blockade     2            2      3 -1.69960669
+183                        to the house     3            3      3 -1.25779983
+184                    in the skagerrak     2            1      3 -1.36021486
+185                        we have also     2            2      3 -1.12657366
+186                    battle in france     4            4      3 -1.24443607
+187                        will be able     2            2      3 -1.30468767
+188              untiring vigilance and     2            2      3 -2.04305451
+189                      at the present     3            3      3 -1.62727107
+190                          to our own     2            2      3 -1.66040436
+191                         of the last     2            2      3 -1.40180166
+192                    of the troops we     2            2      4 -3.34157719
+193                 since the beginning     2            2      3 -2.46712398
+194                   shall be restored     2            2      3 -2.20366842
+195                         in the last     2            2      3 -1.57577380
+196                     present time in     2            2      3 -2.20428886
+197                    at the beginning     2            2      3 -2.04070435
+198                      a very serious     2            2      3 -2.42086241
+199                          of the war     3            3      3 -0.99431215
+200               the french government     2            2      3 -2.48030309
+201                       for the house     2            2      3 -2.73031869
+202                       at the moment     2            2      3 -2.67258549
+203                       able to stand     2            2      3 -3.07594937
+204                     during the last     2            2      3 -2.80578963
+205                        the house of     3            3      3 -3.09306477
+206                      lies before us     2            2      3 -4.07374421
+207                       which we have     2            2      3 -1.77408459
+208                        world war II     2            2      3 -4.69294214
+209                     get down safely     2            2      3 -6.22244398
+210                     able to prevent     2            2      3 -4.69379138
+211                         we have not     2            2      3 -2.28835487
+               z
+1    2.848419489
+2    2.371152412
+3    2.359325827
+4    1.935590602
+5    1.823108317
+6    1.567235081
+7    1.553619131
+8    1.500078436
+9    1.388837336
+10   1.323161699
+11   1.246351845
+12   1.214349765
+13   1.181568409
+14   1.151268547
+15   1.120651718
+16   1.114359062
+17   1.103863737
+18   1.075853127
+19   1.047199251
+20   1.045979045
+21   1.007439668
+22   0.990973383
+23   0.984901180
+24   0.981881115
+25   0.962564153
+26   0.929732460
+27   0.926736948
+28   0.926220761
+29   0.924974910
+30   0.916025328
+31   0.897594396
+32   0.894912055
+33   0.855692033
+34   0.852718172
+35   0.851618881
+36   0.844594470
+37   0.841777489
+38   0.761073555
+39   0.758857944
+40   0.748451900
+41   0.747530612
+42   0.736999308
+43   0.726253957
+44   0.716307663
+45   0.715182397
+46   0.675786948
+47   0.663438336
+48   0.654480304
+49   0.646828296
+50   0.637377132
+51   0.631252037
+52   0.617974746
+53   0.604821430
+54   0.600685995
+55   0.596264351
+56   0.594862276
+57   0.585390980
+58   0.566108297
+59   0.556028302
+60   0.549468065
+61   0.549255097
+62   0.547226692
+63   0.546704462
+64   0.545019125
+65   0.531923996
+66   0.524672718
+67   0.522483565
+68   0.519501831
+69   0.502857903
+70   0.501506723
+71   0.465926436
+72   0.464538505
+73   0.462975482
+74   0.459059919
+75   0.455917553
+76   0.450500126
+77   0.440055964
+78   0.420139428
+79   0.412658313
+80   0.412336513
+81   0.410281013
+82   0.397053484
+83   0.373193713
+84   0.371704571
+85   0.365379134
+86   0.362532177
+87   0.360164193
+88   0.352992073
+89   0.344600452
+90   0.337961158
+91   0.333762049
+92   0.329189153
+93   0.325850372
+94   0.321461178
+95   0.307645755
+96   0.304943911
+97   0.284126504
+98   0.274414233
+99   0.243171508
+100  0.239146167
+101  0.231733150
+102  0.228066854
+103  0.225974706
+104  0.209138588
+105  0.205918067
+106  0.194225724
+107  0.191024210
+108  0.190765667
+109  0.190765667
+110  0.188466347
+111  0.184349949
+112  0.182718094
+113  0.158361169
+114  0.157975365
+115  0.153419370
+116  0.124175825
+117  0.121562450
+118  0.101426577
+119  0.096905192
+120  0.093566456
+121  0.086712719
+122  0.078218344
+123  0.050952099
+124  0.026869783
+125  0.018725320
+126 -0.005714501
+127 -0.006348752
+128 -0.014715331
+129 -0.017133726
+130 -0.028677678
+131 -0.032541840
+132 -0.034113805
+133 -0.036393392
+134 -0.044663727
+135 -0.049957816
+136 -0.051050551
+137 -0.056368285
+138 -0.088035783
+139 -0.101511557
+140 -0.101511557
+141 -0.107617198
+142 -0.111420070
+143 -0.115895760
+144 -0.122658109
+145 -0.129058422
+146 -0.134312237
+147 -0.197968068
+148 -0.200227744
+149 -0.208429418
+150 -0.217627128
+151 -0.226959568
+152 -0.226959568
+153 -0.234738862
+154 -0.238400835
+155 -0.239672280
+156 -0.244456549
+157 -0.249436791
+158 -0.252848856
+159 -0.259585296
+160 -0.266458539
+161 -0.278468132
+162 -0.299427213
+163 -0.299816321
+164 -0.301522649
+165 -0.301522649
+166 -0.319664489
+167 -0.335326059
+168 -0.352243835
+169 -0.356581553
+170 -0.372903400
+171 -0.378527751
+172 -0.384618605
+173 -0.414661419
+174 -0.415222420
+175 -0.450624908
+176 -0.471712897
+177 -0.487041866
+178 -0.489099336
+179 -0.501921096
+180 -0.523305428
+181 -0.531669489
+182 -0.563757681
+183 -0.591753342
+184 -0.601225471
+185 -0.607929855
+186 -0.671322997
+187 -0.726512922
+188 -0.734167490
+189 -0.741505208
+190 -0.743458260
+191 -0.773312748
+192 -0.774319255
+193 -0.831493901
+194 -0.832388145
+195 -0.867389280
+196 -0.902299253
+197 -0.919608119
+198 -0.935850077
+199 -1.035715290
+200 -1.074344111
+201 -1.252031631
+202 -1.360309487
+203 -1.435700598
+204 -1.460275049
+205 -1.468508538
+206 -1.484115044
+207 -1.581601032
+208 -1.707496844
+209 -1.870455540
+210 -1.973484345
+211 -2.171624798</code></pre>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

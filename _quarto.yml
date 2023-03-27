@@ -24,6 +24,8 @@ website:
           - Lab01.qmd
           - assign2.qmd
           - assign3.qmd
+          - assign4.qmd
+          - assign5.qmd
       - href: https://lesliemalave.github.io/Quarto-Blog 
         text: Blog 
 

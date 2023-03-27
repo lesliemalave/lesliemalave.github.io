@@ -1,3 +1,7 @@
+---
+title: "Assignment 3"
+---
+
 ```{r}
 library(haven)
 
@@ -34,4 +38,4 @@ ggplot(subsetdata, aes(x = income, y = Tondu)) +
   geom_smooth(method = "lm")
 ```
 
-There are 7 distinct categories in the DV which is why the data looks like that. It is not suitable to use regression analysis as linear models are used for continuous or numeric variables. Instead, a classification algorithm to predict the category of the dependent variable.
+There are 7 distinct categories in the DV which is why the data looks segregated like that. It is not suitable to use regression analysis as linear models are used for continuous or numeric variables. Instead, a classification algorithm should be used to predict the category of the dependent variable.
