@@ -26,6 +26,7 @@ website:
           - assign3.qmd
           - assign4.qmd
           - assign5.qmd
+          - assign6.qmd
       - href: https://lesliemalave.github.io/Quarto-Blog 
         text: Blog 
 
