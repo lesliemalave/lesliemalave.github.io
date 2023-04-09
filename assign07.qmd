@@ -1,7 +1,0 @@
----
-title: "Assignment 7"
----
-
-```{=html}
-<iframe height="700" width="100%" frameborder="no" src="https://lesliemalave.shinyapps.io/hackathon2/"> </iframe>
-```
